@@ -36,6 +36,7 @@ ext {
     okHttp3_version = "3.8.0"
     gson_version = '2.1.0'
     junit_version = "4.12"
+    mockito_version = "2.18.3"
     runner_version = "1.0.2"
     espresso_version = "3.0.2"
     rxjava_version = "2.2.2"

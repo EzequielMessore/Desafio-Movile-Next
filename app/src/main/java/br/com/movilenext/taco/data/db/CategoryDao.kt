@@ -7,11 +7,11 @@ import android.arch.persistence.room.Query
 import io.reactivex.Flowable
 
 @Dao
-interface CategoryDao {
+abstract class CategoryDao {
     @Query("SELECT * FROM category")
-    fun getAll(): Flowable<List<CategoryEntity>>
+    abstract fun getAll(): Flowable<List<CategoryEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(vararg categories: CategoryEntity)
+    abstract fun insert(vararg categories: CategoryEntity)
 
 }
