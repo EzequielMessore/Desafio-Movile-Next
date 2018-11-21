@@ -33,7 +33,12 @@ ext {
     room_version = "1.1.1"
     retrofit_version = "2.4.0"
     dagger2_version = "2.16"
+    okHttp3_version = "3.8.0"
+    gson_version = '2.1.0'
     junit_version = "4.12"
     runner_version = "1.0.2"
     espresso_version = "3.0.2"
+    rxjava_version = "2.2.2"
+    rxandroid_version = "2.1.0"
+    rxkotlin_version = "2.2.0"
 }
