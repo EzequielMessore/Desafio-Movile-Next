@@ -3,6 +3,8 @@ package br.com.movilenext.taco.presentation.features.category
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
+import android.support.v7.widget.SearchView
+import android.view.Menu
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView
 import br.com.movilenext.taco.core.platform.BaseActivity
@@ -41,6 +43,32 @@ class CategoryActivity : BaseActivity() {
             viewModel.loadCategories()
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search, menu)
+        menu?.let {
+            val item = it.findItem(R.id.menuSearch)
+            val searchView = item.actionView as SearchView
+
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(searchText: String): Boolean {
+                    viewModel.filterCategories(searchText)
+                    return true
+                }
+            })
+
+            searchView.setOnCloseListener {
+                viewModel.filterCategories("")
+                false
+            }
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
     private fun bindViewModels() {
         viewModel.state.observe(this, Observer {
