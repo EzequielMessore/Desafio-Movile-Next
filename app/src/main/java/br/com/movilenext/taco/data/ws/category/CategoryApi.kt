@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.data.ws
+package br.com.movilenext.taco.data.ws.category
 
 import io.reactivex.Observable
 import retrofit2.http.GET

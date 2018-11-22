@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.domain.repository
 
-import br.com.movilenext.taco.data.ws.Category
+import br.com.movilenext.taco.data.ws.category.Category
 import io.reactivex.Single
 
 interface CategoryRepository {

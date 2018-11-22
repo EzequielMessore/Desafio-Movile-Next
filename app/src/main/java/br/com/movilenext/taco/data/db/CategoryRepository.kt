@@ -1,8 +1,8 @@
 package br.com.movilenext.taco.data.db
 
 import br.com.movilenext.taco.data.mappers.CategoryDataMapper
-import br.com.movilenext.taco.data.ws.Category
-import br.com.movilenext.taco.domain.datasource.CategoryDataSource
+import br.com.movilenext.taco.data.ws.category.Category
+import br.com.movilenext.taco.domain.datasource.category.CategoryDataSource
 import dagger.Reusable
 import io.reactivex.Observable
 import javax.inject.Inject

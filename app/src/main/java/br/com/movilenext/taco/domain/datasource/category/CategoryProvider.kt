@@ -1,20 +1,20 @@
-package br.com.movilenext.taco.domain.datasource
+package br.com.movilenext.taco.domain.datasource.category
 
 import br.com.movilenext.taco.data.db.CategoryRepository
 import br.com.movilenext.taco.data.mappers.CategoryModelMapper
-import br.com.movilenext.taco.data.ws.CategoryService
+import br.com.movilenext.taco.data.ws.category.CategoryService
 import br.com.movilenext.taco.presentation.features.category.CategoryModel
 import dagger.Lazy
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class CategoryProviderImpl @Inject constructor(
+class CategoryProvider @Inject constructor(
     private val repository: Lazy<CategoryRepository>,
     private val categoryService: Lazy<CategoryService>,
     private val modelMapper: CategoryModelMapper
-) : CategoryProvider {
+) {
 
-    override fun listCategory(): Observable<List<CategoryModel>> {
+    fun listCategory(): Observable<List<CategoryModel>> {
         return repository
             .get()
             .listCategory()
