@@ -33,7 +33,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.android.support.constraint:constraint-layout:$constraint_version"
 
     //region Support Design
@@ -50,8 +50,39 @@ dependencies {
 
     //endregion
 
+    //region Retrofit
+    implementation "com.squareup.okhttp3:okhttp:$okHttp3_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp3_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$gson_version"
+
+    //endregion
+
+    //region Dagger2
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
+    implementation "com.google.dagger:dagger-android:$dagger2_version"
+    implementation "com.google.dagger:dagger:$dagger2_version"
+
+    //endregion
+
+    //region Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+    implementation "android.arch.persistence.room:rxjava2:$room_version"
+
+    //endregion
+
+    //region Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    //endregion
+
     //region Test's
     testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.robolectric:robolectric:$roboletric_version"
     androidTestImplementation "com.android.support.test:runner:$runner_version"
     androidTestImplementation "com.android.support.test:rules:$runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"

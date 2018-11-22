@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="category"
+            type="br.com.movilenext.taco.presentation.features.category.CategoryModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:id="@+id/iv_category"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerInside"
+            app:image="@{category.image}"
+            app:layout_constraintDimensionRatio="H,5:2"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_fruits" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{category.name}"
+            android:textSize="16sp"
+            app:fontFamily="sans-serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_category"
+            tools:text="Verduras, hortaliças e derivados" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
