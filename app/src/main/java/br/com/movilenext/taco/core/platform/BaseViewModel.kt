@@ -1,8 +1,7 @@
 package br.com.movilenext.taco.core.platform
 
-import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import br.com.movilenext.taco.core.exception.Failure
+import io.reactivex.disposables.CompositeDisposable
 
 /**
  * Base ViewModel class with default Failure handling.
@@ -10,10 +9,5 @@ import br.com.movilenext.taco.core.exception.Failure
  * @see Failure
  */
 abstract class BaseViewModel : ViewModel() {
-
-    var failure: MutableLiveData<Failure> = MutableLiveData()
-
-    protected fun handleFailure(failure: Failure) {
-        this.failure.value = failure
-    }
+    protected val disposable = CompositeDisposable()
 }

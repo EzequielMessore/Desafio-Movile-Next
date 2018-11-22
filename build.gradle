@@ -39,7 +39,9 @@ ext {
     mockito_version = "2.18.3"
     runner_version = "1.0.2"
     espresso_version = "3.0.2"
+    roboletric_version = "4.0.2"
     rxjava_version = "2.2.2"
     rxandroid_version = "2.1.0"
     rxkotlin_version = "2.2.0"
+    glide_version = "4.8.0"
 }

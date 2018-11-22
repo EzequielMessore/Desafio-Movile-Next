@@ -11,6 +11,9 @@ abstract class BaseActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(layoutResource())
+
+        init()
+        insertListener()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -23,4 +26,6 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     abstract fun layoutResource(): Int
+    abstract fun init()
+    abstract fun insertListener()
 }
