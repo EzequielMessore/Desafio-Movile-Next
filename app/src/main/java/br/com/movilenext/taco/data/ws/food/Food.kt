@@ -3,6 +3,8 @@ package br.com.movilenext.taco.data.ws.food
 import com.google.gson.annotations.SerializedName
 
 data class Food(
+    val id: Int,
+
     @SerializedName("description")
     val name: String,
 
@@ -16,10 +18,10 @@ data class Food(
     val vitaminC: VitaminC,
 
     @SerializedName("category_id")
-    val categoryId: VitaminC,
+    val categoryId: Int,
 
-    val attributes: List<Attribute>
+    val attributes: FoodAttributes
 
 )
 
-data class VitaminC(val qty: Double, val unit: String)
+data class VitaminC(val qty: String, val unit: String)

@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.data.db
+package br.com.movilenext.taco.data.db.category
 
 import br.com.movilenext.taco.data.mappers.CategoryDataMapper
 import br.com.movilenext.taco.data.ws.category.Category

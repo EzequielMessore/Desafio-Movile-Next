@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.domain.datasource.category
 
-import br.com.movilenext.taco.data.db.CategoryRepository
+import br.com.movilenext.taco.data.db.category.CategoryRepository
 import br.com.movilenext.taco.data.mappers.CategoryModelMapper
 import br.com.movilenext.taco.data.ws.category.CategoryService
 import br.com.movilenext.taco.presentation.features.category.CategoryModel

@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.data.db
+package br.com.movilenext.taco.data.db.category
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

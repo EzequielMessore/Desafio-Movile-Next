@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.data.db
+package br.com.movilenext.taco.data.db.category
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
@@ -11,7 +11,7 @@ abstract class CategoryDao {
     @Query("SELECT * FROM category")
     abstract fun getAll(): Flowable<List<CategoryEntity>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(vararg categories: CategoryEntity)
 
 }
