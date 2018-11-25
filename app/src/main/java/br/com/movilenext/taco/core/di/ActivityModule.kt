@@ -1,7 +1,7 @@
 package br.com.movilenext.taco.core.di
 
 import br.com.movilenext.taco.presentation.features.category.CategoryActivity
-import br.com.movilenext.taco.presentation.features.food.FoodActivity
+import br.com.movilenext.taco.presentation.features.food.list.FoodActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

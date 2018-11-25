@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="br.com.movilenext.taco.presentation.features.food.FoodViewModel" />
+            type="br.com.movilenext.taco.presentation.features.food.list.FoodViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout

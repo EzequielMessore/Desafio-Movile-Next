@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.presentation.features.food
+package br.com.movilenext.taco.presentation.features.food.list
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -14,11 +14,11 @@ class FoodModel(
 
 @Parcelize
 class FoodAttributesModel(
-    val carbohydrate: AttributeModel?,
-    val sodium: AttributeModel?,
-    val energy: AttributeModel?,
-    val cholesterol: AttributeModel?,
-    val iron: AttributeModel?
+        val carbohydrate: AttributeModel?,
+        val sodium: AttributeModel?,
+        val energy: AttributeModel?,
+        val cholesterol: AttributeModel?,
+        val iron: AttributeModel?
 ) : Parcelable
 
 @Parcelize

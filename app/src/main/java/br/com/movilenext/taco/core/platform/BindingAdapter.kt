@@ -12,9 +12,9 @@ import br.com.movilenext.taco.core.extension.show
 import br.com.movilenext.taco.presentation.features.category.CategoriesData
 import br.com.movilenext.taco.presentation.features.category.CategoriesError
 import br.com.movilenext.taco.presentation.features.category.CategoriesState
-import br.com.movilenext.taco.presentation.features.food.FoodData
-import br.com.movilenext.taco.presentation.features.food.FoodError
-import br.com.movilenext.taco.presentation.features.food.FoodState
+import br.com.movilenext.taco.presentation.features.food.list.FoodData
+import br.com.movilenext.taco.presentation.features.food.list.FoodError
+import br.com.movilenext.taco.presentation.features.food.list.FoodState
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_category.view.*
 

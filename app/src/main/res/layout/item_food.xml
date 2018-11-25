@@ -7,7 +7,7 @@
 
         <variable
             name="food"
-            type="br.com.movilenext.taco.presentation.features.food.FoodModel" />
+            type="br.com.movilenext.taco.presentation.features.food.list.FoodModel" />
     </data>
 
     <android.support.v7.widget.CardView

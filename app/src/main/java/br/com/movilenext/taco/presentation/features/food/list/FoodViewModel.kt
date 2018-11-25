@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.presentation.features.food
+package br.com.movilenext.taco.presentation.features.food.list
 
 import android.arch.lifecycle.MutableLiveData
 import br.com.movilenext.taco.core.platform.BaseViewModel

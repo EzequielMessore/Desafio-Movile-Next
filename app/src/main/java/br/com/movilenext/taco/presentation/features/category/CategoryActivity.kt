@@ -9,7 +9,7 @@ import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView
 import br.com.movilenext.taco.core.platform.BaseActivity
 import br.com.movilenext.taco.databinding.ActivityCategoryBinding
-import br.com.movilenext.taco.presentation.features.food.FoodActivity
+import br.com.movilenext.taco.presentation.features.food.list.FoodActivity
 import kotlinx.android.synthetic.main.activity_category.*
 import kotlinx.android.synthetic.main.container_error.view.*
 import javax.inject.Inject

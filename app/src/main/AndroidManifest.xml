@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".presentation.features.food.FoodActivity"
+            android:name=".presentation.features.food.list.FoodActivity"
             android:label="@string/title_food"
             android:windowSoftInputMode="adjustPan" />
 

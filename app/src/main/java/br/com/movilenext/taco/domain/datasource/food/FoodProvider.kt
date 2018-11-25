@@ -2,7 +2,7 @@ package br.com.movilenext.taco.domain.datasource.food
 
 import br.com.movilenext.taco.data.mappers.FoodModelMapper
 import br.com.movilenext.taco.data.ws.food.FoodService
-import br.com.movilenext.taco.presentation.features.food.FoodModel
+import br.com.movilenext.taco.presentation.features.food.list.FoodModel
 import dagger.Lazy
 import io.reactivex.Observable
 import javax.inject.Inject

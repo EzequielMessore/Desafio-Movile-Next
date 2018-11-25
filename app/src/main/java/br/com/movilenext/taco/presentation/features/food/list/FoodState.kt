@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.presentation.features.food
+package br.com.movilenext.taco.presentation.features.food.list
 
 sealed class FoodState
 data class FoodData(val data: List<FoodModel>) : FoodState()

@@ -1,4 +1,4 @@
-package br.com.movilenext.taco.presentation.features.food
+package br.com.movilenext.taco.presentation.features.food.list
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
