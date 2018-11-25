@@ -27,7 +27,7 @@
                 android:alpha="0.6"
                 android:contentDescription="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_cere"
+                android:src="@drawable/cereals"
                 app:image="@{viewModel.categoryImage}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
