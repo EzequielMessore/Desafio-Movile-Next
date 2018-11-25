@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.data.mappers
 
-import br.com.movilenext.taco.data.ws.Category
+import br.com.movilenext.taco.data.ws.category.Category
 import br.com.movilenext.taco.presentation.features.category.CategoryModel
 import javax.inject.Inject
 

@@ -1,6 +1,7 @@
 package br.com.movilenext.taco.data.db
 
 import android.arch.persistence.room.Room
+import br.com.movilenext.taco.data.db.category.CategoryEntity
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

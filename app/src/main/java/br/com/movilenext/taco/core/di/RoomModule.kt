@@ -2,8 +2,9 @@ package br.com.movilenext.taco.core.di
 
 import android.arch.persistence.room.Room
 import android.content.Context
-import br.com.movilenext.taco.data.db.CategoryDao
 import br.com.movilenext.taco.data.db.TacoRoomDatabase
+import br.com.movilenext.taco.data.db.category.CategoryDao
+import br.com.movilenext.taco.data.db.food.FoodDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -19,5 +20,9 @@ class RoomModule {
     @Singleton
     @Provides
     internal fun providesCategoryDao(demoDatabase: TacoRoomDatabase): CategoryDao = demoDatabase.categoryDao()
+
+    @Singleton
+    @Provides
+    internal fun providesFoodDao(demoDatabase: TacoRoomDatabase): FoodDao = demoDatabase.foodDao()
 
 }

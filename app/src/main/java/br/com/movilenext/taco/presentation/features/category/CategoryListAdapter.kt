@@ -9,7 +9,7 @@ import br.com.movilenext.taco.core.platform.BaseAdapter
 import br.com.movilenext.taco.databinding.ItemCategoryBinding
 import javax.inject.Inject
 
-class CategoryListAdapter @Inject constructor(): BaseAdapter<CategoryModel, CategoryListAdapter.ViewHolder>() {
+class CategoryListAdapter @Inject constructor() : BaseAdapter<CategoryModel, CategoryListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemCategoryBinding = DataBindingUtil
@@ -26,11 +26,16 @@ class CategoryListAdapter @Inject constructor(): BaseAdapter<CategoryModel, Cate
         viewHolder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    var listener: ((CategoryModel) -> Unit) = {}
+
+    inner class ViewHolder(private val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(categoryModel: CategoryModel) {
             binding.category = categoryModel
             binding.executePendingBindings()
+            binding.root.setOnClickListener {
+                listener(categoryModel)
+            }
         }
     }
 }

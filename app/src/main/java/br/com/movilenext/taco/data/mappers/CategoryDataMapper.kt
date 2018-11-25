@@ -1,7 +1,7 @@
 package br.com.movilenext.taco.data.mappers
 
-import br.com.movilenext.taco.data.db.CategoryEntity
-import br.com.movilenext.taco.data.ws.Category
+import br.com.movilenext.taco.data.db.category.CategoryEntity
+import br.com.movilenext.taco.data.ws.category.Category
 import dagger.Reusable
 import javax.inject.Inject
 

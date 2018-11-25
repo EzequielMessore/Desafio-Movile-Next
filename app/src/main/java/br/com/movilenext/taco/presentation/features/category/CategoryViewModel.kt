@@ -3,10 +3,8 @@ package br.com.movilenext.taco.presentation.features.category
 import android.arch.lifecycle.MutableLiveData
 import br.com.movilenext.taco.core.platform.BaseViewModel
 import br.com.movilenext.taco.domain.interactor.GetCategories
-import io.reactivex.Observable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
-import java.util.*
 import javax.inject.Inject
 
 class CategoryViewModel @Inject constructor(private val getCategories: GetCategories) : BaseViewModel() {
@@ -33,25 +31,10 @@ class CategoryViewModel @Inject constructor(private val getCategories: GetCatego
     }
 
     fun filterCategories(query: String) {
-        val filteredList = ArrayList<CategoryModel>()
-
-        if (query.isEmpty()) {
-            filteredList.addAll(categories)
-        } else {
-            filteredList.addAll(
-                Observable
-                    .just(categories)
-                    .flatMapIterable { it }
-                    .filter { it.name.toLowerCase().contains(query.toLowerCase()) }
-                    .toList().blockingGet()
-            )
+        val list = filter(query, categories) {
+            it.name.toLowerCase().contains(query.toLowerCase())
         }
-        state.value = CategoriesData(filteredList)
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        disposable.clear()
+        state.value = CategoriesData(list)
     }
 
 }

@@ -1,7 +1,8 @@
 package br.com.movilenext.taco.core.di
 
 import br.com.movilenext.taco.BuildConfig
-import br.com.movilenext.taco.data.ws.CategoryApi
+import br.com.movilenext.taco.data.ws.category.CategoryApi
+import br.com.movilenext.taco.data.ws.food.FoodApi
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -29,6 +30,10 @@ class NetworkModule @Inject constructor() {
     @Provides
     @Singleton
     fun provideCategoryApi(retrofit: Retrofit): CategoryApi = retrofit.create(CategoryApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideFoodApi(retrofit: Retrofit): FoodApi = retrofit.create(FoodApi::class.java)
 
     @Provides
     @Singleton

@@ -9,15 +9,15 @@ data class CategoryModel(val id: Int, val name: String) : Parcelable {
 
     fun getImage(): Int =
         when (id) {
-            1 -> R.drawable.img_cere
-            2 -> R.drawable.img_vegetables
-            3 -> R.drawable.img_fruits
-            4 -> R.drawable.img_oil
-            5 -> R.drawable.img_fish
-            6 -> R.drawable.img_beef
-            7 -> R.drawable.img_milk
-            8 -> R.drawable.img_drink
-            9 -> R.drawable.img_eggs
-            else -> R.mipmap.ic_launcher
+            1 -> R.drawable.cereals
+            2 -> R.drawable.vegetable
+            3 -> R.drawable.fruits
+            4 -> R.drawable.oil
+            5 -> R.drawable.fish
+            6 -> R.drawable.beef
+            7 -> R.drawable.milk
+            8 -> R.drawable.drink
+            9 -> R.drawable.egg
+            else -> R.drawable.cereals
         }
 }
