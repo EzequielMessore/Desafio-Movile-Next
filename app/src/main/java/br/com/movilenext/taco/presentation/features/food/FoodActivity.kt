@@ -1,50 +1,51 @@
-package br.com.movilenext.taco.presentation.features.category
+package br.com.movilenext.taco.presentation.features.food
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.SearchView
 import android.view.Menu
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView
 import br.com.movilenext.taco.core.platform.BaseActivity
-import br.com.movilenext.taco.databinding.ActivityCategoryBinding
-import br.com.movilenext.taco.presentation.features.food.FoodActivity
-import kotlinx.android.synthetic.main.activity_category.*
+import br.com.movilenext.taco.databinding.ActivityFoodBinding
+import br.com.movilenext.taco.presentation.features.category.CategoryModel
+import kotlinx.android.synthetic.main.activity_food.*
 import kotlinx.android.synthetic.main.container_error.view.*
 import javax.inject.Inject
 
-class CategoryActivity : BaseActivity() {
+class FoodActivity : BaseActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     @Inject
-    lateinit var adapter: CategoryListAdapter
+    lateinit var adapter: FoodListAdapter
 
-    private val binding: ActivityCategoryBinding by contentView(layoutResource())
+    private val binding: ActivityFoodBinding by contentView(layoutResource())
 
     private val viewModel by lazy {
         ViewModelProviders
-            .of(this, viewModelFactory)
-            .get(CategoryViewModel::class.java)
+                .of(this, viewModelFactory)
+                .get(FoodViewModel::class.java)
     }
 
-    override fun layoutResource() = R.layout.activity_category
+    override fun layoutResource() = R.layout.activity_food
 
     override fun init() {
+        viewModel.categoryImage = getCategory().getImage()
         binding.viewModel = viewModel
-        viewModel.load
+        viewModel.loadFoodsByCategory(getCategory().id)
 
         bindViewModels()
-        rv_category.adapter = adapter
+        rv_food.adapter = adapter
+
     }
 
     override fun insertListener() {
         container_error.btn_try_again.setOnClickListener {
-            viewModel.loadCategories()
-        }
-        adapter.listener = {
-            startActivity(FoodActivity.newIntent(this, it))
+            viewModel.loadFoodsByCategory(getCategory().id)
         }
     }
 
@@ -82,19 +83,29 @@ class CategoryActivity : BaseActivity() {
         })
     }
 
-    private fun handleCategoriesState(state: CategoriesState) {
+    private fun handleCategoriesState(state: FoodState) {
         when (state) {
-            is CategoriesLoading -> {
+            is FoodLoading -> {
                 loading.show()
             }
-            is CategoriesData -> {
+            is FoodData -> {
                 loading.hide()
                 adapter.items = state.data
             }
-            is CategoriesError -> {
+            is FoodError -> {
                 loading.hide()
             }
         }
+    }
+
+    private fun getCategory(): CategoryModel = intent.getParcelableExtra(CATEGORY)
+
+    companion object {
+        private const val CATEGORY = "category"
+
+        fun newIntent(context: Context, category: CategoryModel): Intent =
+                Intent(context, FoodActivity::class.java)
+                        .putExtra(CATEGORY, category)
     }
 
 

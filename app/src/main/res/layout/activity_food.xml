@@ -7,30 +7,43 @@
 
         <variable
             name="viewModel"
-            type="br.com.movilenext.taco.presentation.features.category.CategoryViewModel" />
+            type="br.com.movilenext.taco.presentation.features.food.FoodViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:categoryState="@{viewModel.state}">
+        app:foodState="@{viewModel.state}">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_category"
+            <ImageView
+                android:id="@+id/iv_category"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                android:alpha="0.6"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_cere"
+                app:image="@{viewModel.categoryImage}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_food"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:spanCount="2"
-                tools:listitem="@layout/item_category" />
+                tools:listitem="@layout/item_food" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -40,6 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

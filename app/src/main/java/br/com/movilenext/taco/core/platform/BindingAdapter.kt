@@ -12,6 +12,9 @@ import br.com.movilenext.taco.core.extension.show
 import br.com.movilenext.taco.presentation.features.category.CategoriesData
 import br.com.movilenext.taco.presentation.features.category.CategoriesError
 import br.com.movilenext.taco.presentation.features.category.CategoriesState
+import br.com.movilenext.taco.presentation.features.food.FoodData
+import br.com.movilenext.taco.presentation.features.food.FoodError
+import br.com.movilenext.taco.presentation.features.food.FoodState
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_category.view.*
 
@@ -25,7 +28,7 @@ object BindingAdapter {
 
     @JvmStatic
     @BindingAdapter("categoryState")
-    fun setStateVisibility(view: View, state: MutableLiveData<CategoriesState>) {
+    fun setCategoryStateVisibility(view: View, state: MutableLiveData<CategoriesState>) {
         val parentActivity: AppCompatActivity? = view.getParentActivity()
         parentActivity?.let { act ->
             val content = view.content
@@ -40,6 +43,37 @@ object BindingAdapter {
                     is CategoriesData -> {
                         error.hide()
                         content.show()
+                    }
+                    else -> {
+                        content.hide()
+                        content.show()
+                    }
+                }
+            })
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("foodState")
+    fun setFoodStateVisibility(view: View, state: MutableLiveData<FoodState>) {
+        val parentActivity: AppCompatActivity? = view.getParentActivity()
+        parentActivity?.let { act ->
+            val content = view.content
+            val error = view.container_error
+
+            state.observe(act, Observer {
+                when (it) {
+                    is FoodError -> {
+                        error.show()
+                        content.hide()
+                    }
+                    is FoodData -> {
+                        error.hide()
+                        content.show()
+                    }
+                    else -> {
+                        content.hide()
+                        error.hide()
                     }
                 }
             })

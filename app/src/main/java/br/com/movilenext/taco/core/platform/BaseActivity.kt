@@ -2,6 +2,7 @@ package br.com.movilenext.taco.core.platform
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import dagger.android.AndroidInjection
 
@@ -23,6 +24,14 @@ abstract class BaseActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    protected fun setupToolbar(toolbar: Toolbar) {
+        setSupportActionBar(toolbar)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setDisplayShowHomeEnabled(true)
+        }
     }
 
     abstract fun layoutResource(): Int

@@ -8,13 +8,11 @@ import br.com.movilenext.taco.data.db.category.CategoryEntity
 import br.com.movilenext.taco.data.db.converters.Converters
 import br.com.movilenext.taco.data.db.food.FoodDao
 import br.com.movilenext.taco.data.db.food.FoodEntity
-import br.com.movilenext.taco.data.db.food.VitaminCEntity
 
 @Database(
     entities = [
         CategoryEntity::class,
-        FoodEntity::class,
-        VitaminCEntity::class
+        FoodEntity::class
     ], version = 1, exportSchema = false
 )
 @TypeConverters(Converters::class)

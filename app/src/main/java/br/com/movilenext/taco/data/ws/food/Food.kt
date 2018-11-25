@@ -15,7 +15,7 @@ data class Food(
     val baseUnit: String,
 
     @SerializedName("vitaminC")
-    val vitaminC: VitaminC,
+    val vitaminC: VitaminC?,
 
     @SerializedName("category_id")
     val categoryId: Int,

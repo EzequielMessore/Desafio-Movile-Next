@@ -2,11 +2,11 @@ package br.com.movilenext.taco.data.ws.food
 
 
 data class FoodAttributes(
-    val carbohydrate: Attribute,
-    val sodium: Attribute,
-    val energy: Attribute,
-    val cholesterol: Attribute,
-    val iron: Attribute
+    val carbohydrate: Attribute?,
+    val sodium: Attribute?,
+    val energy: Energy?,
+    val cholesterol: Attribute?,
+    val iron: Attribute?
 )
 
 open class Attribute(

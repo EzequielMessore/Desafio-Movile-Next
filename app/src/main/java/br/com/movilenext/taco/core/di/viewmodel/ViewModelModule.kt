@@ -3,6 +3,7 @@ package br.com.movilenext.taco.core.di.viewmodel
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import br.com.movilenext.taco.presentation.features.category.CategoryViewModel
+import br.com.movilenext.taco.presentation.features.food.FoodViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -16,5 +17,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CategoryViewModel::class)
     abstract fun bindsCategoryViewModel(viewModel: CategoryViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FoodViewModel::class)
+    abstract fun bindsFoodViewModel(viewModel: FoodViewModel): ViewModel
 
 }
