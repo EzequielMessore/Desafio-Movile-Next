@@ -25,6 +25,7 @@ class FoodViewModel @Inject constructor(
                             state.value = FoodData(it)
                         },
                         onError = {
+                            println(it.printStackTrace())
                             state.value = FoodError(it)
                         }
                 ).addTo(disposable)

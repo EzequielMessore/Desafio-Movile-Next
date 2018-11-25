@@ -20,7 +20,7 @@ data class Food(
     @SerializedName("category_id")
     val categoryId: Int,
 
-    val attributes: FoodAttributes
+    val attributes: FoodAttributes?
 
 )
 

@@ -26,11 +26,16 @@ class FoodListAdapter @Inject constructor() : BaseAdapter<FoodModel, FoodListAda
         viewHolder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemFoodBinding) : RecyclerView.ViewHolder(binding.root) {
+    var listener: ((FoodModel) -> Unit) = {}
+
+    inner class ViewHolder(private val binding: ItemFoodBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(foodModel: FoodModel) {
             binding.food = foodModel
             binding.executePendingBindings()
+            binding.root.setOnClickListener {
+                listener(foodModel)
+            }
         }
     }
 }

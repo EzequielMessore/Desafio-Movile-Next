@@ -3,7 +3,9 @@ package br.com.movilenext.taco.core.platform
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Observer
 import android.databinding.BindingAdapter
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.CardView
 import android.view.View
 import android.widget.ImageView
 import br.com.movilenext.taco.core.extension.getParentActivity
@@ -12,6 +14,7 @@ import br.com.movilenext.taco.core.extension.show
 import br.com.movilenext.taco.presentation.features.category.CategoriesData
 import br.com.movilenext.taco.presentation.features.category.CategoriesError
 import br.com.movilenext.taco.presentation.features.category.CategoriesState
+import br.com.movilenext.taco.presentation.features.food.list.AttributeModel
 import br.com.movilenext.taco.presentation.features.food.list.FoodData
 import br.com.movilenext.taco.presentation.features.food.list.FoodError
 import br.com.movilenext.taco.presentation.features.food.list.FoodState
@@ -46,7 +49,7 @@ object BindingAdapter {
                     }
                     else -> {
                         content.hide()
-                        content.show()
+                        error.hide()
                     }
                 }
             })
@@ -77,6 +80,22 @@ object BindingAdapter {
                     }
                 }
             })
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("cardBackground")
+    fun setCardBackgroundColor(cardView: CardView, color: String) {
+        cardView.setCardBackgroundColor(Color.parseColor(color))
+    }
+
+    @JvmStatic
+    @BindingAdapter("attrVisibility")
+    fun setAttributeVisibility(view: View, attr: AttributeModel) {
+        view.visibility = if (attr.isNA() or attr.isTR()) {
+            View.GONE
+        } else {
+            View.VISIBLE
         }
     }
 

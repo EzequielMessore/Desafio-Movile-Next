@@ -7,14 +7,14 @@ import android.support.v7.widget.SearchView
 import android.view.Menu
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView
-import br.com.movilenext.taco.core.platform.BaseActivity
+import br.com.movilenext.taco.core.platform.InjectableActivity
 import br.com.movilenext.taco.databinding.ActivityCategoryBinding
 import br.com.movilenext.taco.presentation.features.food.list.FoodActivity
 import kotlinx.android.synthetic.main.activity_category.*
 import kotlinx.android.synthetic.main.container_error.view.*
 import javax.inject.Inject
 
-class CategoryActivity : BaseActivity() {
+class CategoryActivity : InjectableActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory

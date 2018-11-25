@@ -9,14 +9,15 @@ import android.support.v7.widget.SearchView
 import android.view.Menu
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView
-import br.com.movilenext.taco.core.platform.BaseActivity
+import br.com.movilenext.taco.core.platform.InjectableActivity
 import br.com.movilenext.taco.databinding.ActivityFoodBinding
 import br.com.movilenext.taco.presentation.features.category.CategoryModel
+import br.com.movilenext.taco.presentation.features.food.details.FoodDetailActivity
 import kotlinx.android.synthetic.main.activity_food.*
 import kotlinx.android.synthetic.main.container_error.view.*
 import javax.inject.Inject
 
-class FoodActivity : BaseActivity() {
+class FoodActivity : InjectableActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -34,12 +35,18 @@ class FoodActivity : BaseActivity() {
     override fun layoutResource() = R.layout.activity_food
 
     override fun init() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         viewModel.categoryImage = getCategory().getImage()
         binding.viewModel = viewModel
         viewModel.loadFoodsByCategory(getCategory().id)
 
         bindViewModels()
         rv_food.adapter = adapter
+
+        adapter.listener = {
+            startActivity(FoodDetailActivity.newIntent(this, it))
+        }
 
     }
 

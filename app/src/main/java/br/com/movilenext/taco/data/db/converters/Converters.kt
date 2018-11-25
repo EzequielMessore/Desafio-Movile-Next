@@ -7,13 +7,13 @@ import com.google.gson.Gson
 
 class Converters {
     @TypeConverter
-    fun vitaminFromJson(model: VitaminC): String {
+    fun vitaminFromJson(model: VitaminC?): String {
         return Gson().toJson(model)
     }
 
     @TypeConverter
-    fun jsonToVitamin(json: String): VitaminC {
-        return Gson().fromJson<VitaminC>(json, VitaminC::class.java)
+    fun jsonToVitamin(json: String): VitaminC? {
+        return Gson().fromJson<VitaminC?>(json, VitaminC::class.java)
     }
 
     @TypeConverter

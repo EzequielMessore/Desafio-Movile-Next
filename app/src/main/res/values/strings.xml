@@ -5,4 +5,5 @@
     <string name="action_search">Search</string>
     <string name="title_category">Categories</string>
     <string name="title_food">Foods</string>
+    <string name="title_details_food">Detail Food</string>
 </resources>
