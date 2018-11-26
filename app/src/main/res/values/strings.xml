@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">1 - TACO</string>
+    <string name="app_name">Table of Food Composition</string>
     <string name="text_try_again">Try Again</string>
     <string name="error_title">Ops! Something wrong is not right</string>
     <string name="action_search">Search</string>
