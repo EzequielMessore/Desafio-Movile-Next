@@ -1,9 +1,9 @@
-package br.com.movilenext.taco.data.db.food
+package br.com.movilenext.taco.data.db
 
 import android.arch.persistence.room.Room
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import br.com.movilenext.taco.data.db.TacoRoomDatabase
+import br.com.movilenext.taco.data.db.food.FoodEntity
 import br.com.movilenext.taco.data.ws.food.Attribute
 import br.com.movilenext.taco.data.ws.food.Energy
 import br.com.movilenext.taco.data.ws.food.FoodAttributes

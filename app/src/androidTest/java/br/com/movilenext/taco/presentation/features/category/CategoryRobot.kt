@@ -1,31 +1,60 @@
 package br.com.movilenext.taco.presentation.features.category
 
 import android.content.Intent
+import android.support.test.InstrumentationRegistry
 import android.support.test.rule.ActivityTestRule
-import br.com.concretesolutions.requestmatcher.InstrumentedTestRequestMatcherRule
-import br.com.concretesolutions.requestmatcher.RequestMatcherRule
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.base.BaseTestRobot
+import br.com.movilenext.taco.base.extensions.getJson
+import br.com.movilenext.taco.base.extensions.inject
 import okhttp3.mockwebserver.MockWebServer
-import org.junit.Rule
 
-class CategoryRobot(server: MockWebServer) : BaseTestRobot() {
+class CategoryRobot(
+    private val server: MockWebServer = MockWebServer()
+) : BaseTestRobot() {
 
-    private var activityRule
-            = ActivityTestRule(CategoryActivity::class.java, false, false)
-    @get:Rule
-    var serverRule: RequestMatcherRule = InstrumentedTestRequestMatcherRule(server)
+
+    private val activityRule = ActivityTestRule(CategoryActivity::class.java, false, false)
+    private val context = InstrumentationRegistry.getInstrumentation().targetContext
+
+    init {
+        server.start(36004)
+        server.url("/")
+    }
+
+    fun destroy() {
+        server.shutdown()
+    }
 
     fun start() = apply {
         activityRule.launchActivity(Intent())
     }
 
-    fun injectCategories() = apply {
-        serverRule.url("/")
-        serverRule.addFixture(200, "categories.json")
+    fun injectCategories200() = apply {
+        server.inject(200, context getJson R.raw.categories)
+    }
+
+    fun injectCategories500() = apply {
+        server.inject(500, context getJson R.raw.categories_empty)
     }
 
     fun checkItemInRecyclerView(text: String) = apply {
         checkTextIsDisplayedWithDescendant(text, R.id.rv_category)
     }
+
+    fun checkErrorIsVisible() = apply {
+        checkIdIsVisible(R.id.iv_error)
+        checkIdIsVisible(R.id.tv_title)
+        checkIdIsVisible(R.id.btn_try_again)
+    }
+
+    fun clickInSearch() = apply {
+        clickView(R.id.menuSearch)
+    }
+
+    fun setTextInSearch(text: String) = apply {
+        setTextInSearchView(text)
+    }
+
+
 }

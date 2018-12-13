@@ -14,7 +14,7 @@ class CategoryViewModel @Inject constructor(private val getCategories: GetCatego
         loadCategories()
         MutableLiveData<Any>()
     }
-    private lateinit var categories: List<CategoryModel>
+    private var categories: List<CategoryModel> = emptyList()
 
     fun loadCategories() {
         state.value = CategoriesLoading

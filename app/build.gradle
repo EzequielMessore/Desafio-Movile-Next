@@ -14,7 +14,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "br.com.movilenext.taco.base.runner.MockTestRunner"
     }
     buildTypes {
         release {
@@ -84,12 +84,12 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.robolectric:robolectric:$roboletric_version"
-    androidTestImplementation "com.squareup.okhttp3:mockwebserver:3.8.0"
-    androidTestImplementation "br.com.concretesolutions:requestmatcher:2.2.0"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okHttp3_version"
     androidTestImplementation "com.android.support.test:runner:$runner_version"
     androidTestImplementation "com.android.support.test:rules:$runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "net.vidageek:mirror:1.6.1"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$espresso_version"
+    androidTestImplementation "commons-io:commons-io:$commons_io"
 
     //endregion
 }

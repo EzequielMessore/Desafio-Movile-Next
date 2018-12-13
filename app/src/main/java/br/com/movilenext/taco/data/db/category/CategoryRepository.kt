@@ -17,4 +17,11 @@ class CategoryRepository @Inject constructor(
         return categoryDao.getAll().toObservable().map { categoryDataMapper.transform(it) }
     }
 
+    fun save(categories: List<Category>): List<Category> {
+        categoryDao.insert(*categories.map {
+            categoryDataMapper.toFrom(it)
+        }.toTypedArray())
+        return categories
+    }
+
 }
