@@ -23,6 +23,6 @@ open class RoomModule {
 
     @Singleton
     @Provides
-    internal fun providesFoodDao(demoDatabase: TacoRoomDatabase): FoodDao = demoDatabase.foodDao()
+    internal open fun providesFoodDao(demoDatabase: TacoRoomDatabase): FoodDao = demoDatabase.foodDao()
 
 }

@@ -7,6 +7,8 @@ import br.com.movilenext.taco.core.di.RoomModule
 import br.com.movilenext.taco.data.db.TacoRoomDatabase
 import br.com.movilenext.taco.data.db.category.CategoryDao
 import br.com.movilenext.taco.data.db.category.CategoryEntity
+import br.com.movilenext.taco.data.db.food.FoodDao
+import br.com.movilenext.taco.data.db.food.FoodEntity
 import io.reactivex.Flowable
 
 open class MockNetworkModule : NetworkModule() {
@@ -30,6 +32,19 @@ open class MockRoomdataBase : RoomModule() {
             }
 
             override fun insert(vararg categories: CategoryEntity) {
+
+            }
+
+        }
+    }
+
+    override fun providesFoodDao(demoDatabase: TacoRoomDatabase): FoodDao {
+        return object : FoodDao() {
+            override fun getFoodByCategoryId(categoryId: Int): Flowable<List<FoodEntity>> {
+                return Flowable.just(emptyList())
+            }
+
+            override fun insert(vararg foods: FoodEntity) {
 
             }
 
