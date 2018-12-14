@@ -12,8 +12,7 @@ import android.support.test.espresso.assertion.ViewAssertions.doesNotExist
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.view.KeyEvent.KEYCODE_ENTER
-import org.hamcrest.CoreMatchers.allOf
-import org.hamcrest.CoreMatchers.anything
+import org.hamcrest.CoreMatchers.*
 
 open class BaseTestRobot {
     protected fun fillEditText(resId: Int, text: String) = onView(withId(resId)).perform(
@@ -45,7 +44,7 @@ open class BaseTestRobot {
     }
 
     protected fun checkTextIsNotDisplayed(text: String) {
-        onView(withText(text)).check(doesNotExist())
+        onView(withText(text)).check(matches(not(isDisplayed())))
     }
 
     protected fun checkTextIsVisible(text: String) {
