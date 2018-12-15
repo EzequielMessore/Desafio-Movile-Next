@@ -20,12 +20,19 @@ class CategoryProvider @Inject constructor(
             .listCategory()
             .flatMap {
                 if (it.isEmpty()) {
-                    categoryService.get().listCategory().map { modelMapper.toFrom(it) }
+                    categoryService
+                        .get()
+                        .listCategory()
+                        .map { list ->
+                             repository.get().save(list)
+                        }
+                        .map { list ->
+                            modelMapper.toFrom(list)
+                        }
                 } else {
                     Observable.just(modelMapper.toFrom(it))
                 }
             }
-
     }
 
 }

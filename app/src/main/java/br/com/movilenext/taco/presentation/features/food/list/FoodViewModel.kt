@@ -14,7 +14,7 @@ class FoodViewModel @Inject constructor(
     val state: MutableLiveData<FoodState> = MutableLiveData()
     var categoryImage: Int? = null
 
-    private lateinit var foods: List<FoodModel>
+    private var foods: List<FoodModel> = emptyList()
 
     fun loadFoodsByCategory(categoryId: Int) {
         state.value = FoodLoading

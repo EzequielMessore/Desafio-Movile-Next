@@ -10,19 +10,19 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class RoomModule {
+open class RoomModule {
 
     @Singleton
     @Provides
-    internal fun providesRoomDatabase(context: Context): TacoRoomDatabase =
+    open fun providesRoomDatabase(context: Context): TacoRoomDatabase =
         Room.databaseBuilder(context.applicationContext, TacoRoomDatabase::class.java, "taco-db").build()
 
     @Singleton
     @Provides
-    internal fun providesCategoryDao(demoDatabase: TacoRoomDatabase): CategoryDao = demoDatabase.categoryDao()
+    internal open fun providesCategoryDao(demoDatabase: TacoRoomDatabase): CategoryDao = demoDatabase.categoryDao()
 
     @Singleton
     @Provides
-    internal fun providesFoodDao(demoDatabase: TacoRoomDatabase): FoodDao = demoDatabase.foodDao()
+    internal open fun providesFoodDao(demoDatabase: TacoRoomDatabase): FoodDao = demoDatabase.foodDao()
 
 }

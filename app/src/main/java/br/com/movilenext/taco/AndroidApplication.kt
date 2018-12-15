@@ -10,13 +10,13 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
-class AndroidApplication : Application(), HasActivityInjector {
+open class AndroidApplication : Application(), HasActivityInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
-    private val appComponent: ApplicationComponent by lazy {
-        DaggerApplicationComponent.builder()
+    open fun createComponent(): ApplicationComponent {
+        return DaggerApplicationComponent.builder()
             .application(this)
             .appModule(ApplicationModule(this))
             .build()
@@ -25,7 +25,7 @@ class AndroidApplication : Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
 
-        appComponent.inject(this)
+        createComponent().inject(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
