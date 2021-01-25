@@ -1,5 +1,6 @@
 package br.com.movilenext.taco.base
 
+import android.content.res.Resources
 import androidx.annotation.IdRes
 import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
@@ -60,7 +61,7 @@ open class BaseTestRobot {
     }
 
     protected fun setTextInSearchView(text: String) {
-        onView(withId(android.support.design.R.id.search_src_text))
+        onView(withId(Resources.getSystem().getIdentifier("search_src_text", "id", "android")))
             .perform(ViewActions.typeText(text), pressKey(KEYCODE_ENTER))
             .perform(closeSoftKeyboard())
     }

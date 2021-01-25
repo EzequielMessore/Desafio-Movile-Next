@@ -23,7 +23,7 @@ class CategoryServiceTest {
         val test = service.listCategory().test()
         test.awaitTerminalEvent()
 
-        test.assertValue(listOf)
+        test.assertNoValues()
     }
 
 }

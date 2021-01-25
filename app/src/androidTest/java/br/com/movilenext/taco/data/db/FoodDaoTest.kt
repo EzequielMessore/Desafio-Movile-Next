@@ -20,7 +20,7 @@ class FoodDaoTest {
     @Before
     fun setup() {
         database = Room.inMemoryDatabaseBuilder(
-            InstrumentationRegistry.getContext(),
+            InstrumentationRegistry.getInstrumentation().context,
             TacoRoomDatabase::class.java
         ).build()
     }
