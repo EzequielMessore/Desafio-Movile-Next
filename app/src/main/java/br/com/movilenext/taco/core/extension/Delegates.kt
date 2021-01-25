@@ -1,10 +1,10 @@
 package br.com.movilenext.taco.core.extension
 
 import android.app.Activity
-import android.databinding.BaseObservable
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
-import android.support.annotation.LayoutRes
+import androidx.databinding.BaseObservable
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.annotation.LayoutRes
 import kotlin.reflect.KProperty
 
 fun <T : ViewDataBinding> contentView(@LayoutRes layoutRes: Int): SetContentView<T> = SetContentView(layoutRes)

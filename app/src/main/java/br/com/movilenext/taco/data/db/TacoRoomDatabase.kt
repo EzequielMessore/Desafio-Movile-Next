@@ -1,8 +1,8 @@
 package br.com.movilenext.taco.data.db
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import br.com.movilenext.taco.data.db.category.CategoryDao
 import br.com.movilenext.taco.data.db.category.CategoryEntity
 import br.com.movilenext.taco.data.db.converters.Converters

@@ -1,11 +1,11 @@
 package br.com.movilenext.taco.presentation.features.food.list
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import android.view.Menu
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView

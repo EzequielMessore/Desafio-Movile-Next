@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.base.mocks
 
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import android.content.Context
 import br.com.movilenext.taco.core.di.NetworkModule
 import br.com.movilenext.taco.core.di.RoomModule

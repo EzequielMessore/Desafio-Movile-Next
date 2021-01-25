@@ -10,14 +10,14 @@
             type="br.com.movilenext.taco.presentation.features.food.list.AttributeModel" />
     </data>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="100dp"
         android:layout_height="130dp"
         app:attrVisibility="@{attribute}"
         app:cardBackground="@{attribute.color}"
         app:cardCornerRadius="16dp">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -54,7 +54,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:text="4.16mg"/>
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </layout>

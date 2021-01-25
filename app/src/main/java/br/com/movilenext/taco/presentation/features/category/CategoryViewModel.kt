@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.presentation.features.category
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import br.com.movilenext.taco.core.platform.BaseViewModel
 import br.com.movilenext.taco.domain.interactor.GetCategories
 import io.reactivex.rxkotlin.addTo

@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.core.platform
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 

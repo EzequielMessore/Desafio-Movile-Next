@@ -1,8 +1,8 @@
 package br.com.movilenext.taco.presentation.features.category
 
 import android.content.Intent
-import android.support.test.InstrumentationRegistry
-import android.support.test.rule.ActivityTestRule
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.rule.ActivityTestRule
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.base.BaseTestRobot
 import br.com.movilenext.taco.base.extensions.getJson

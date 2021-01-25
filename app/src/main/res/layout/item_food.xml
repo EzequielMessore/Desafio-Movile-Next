@@ -10,7 +10,7 @@
             type="br.com.movilenext.taco.presentation.features.food.list.FoodModel" />
     </data>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0.7"
@@ -19,7 +19,7 @@
         app:cardMaxElevation="4dp"
         app:cardUseCompatPadding="true">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="12dp">
@@ -49,10 +49,10 @@
                 tools:text="100mg" />
 
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </layout>

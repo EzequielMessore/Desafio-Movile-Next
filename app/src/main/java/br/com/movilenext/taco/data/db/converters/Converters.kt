@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.data.db.converters
 
-import android.arch.persistence.room.TypeConverter
+import androidx.room.TypeConverter
 import br.com.movilenext.taco.data.ws.food.FoodAttributes
 import br.com.movilenext.taco.data.ws.food.VitaminC
 import com.google.gson.Gson

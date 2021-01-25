@@ -1,9 +1,9 @@
 package br.com.movilenext.taco.presentation.features.category
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.widget.SearchView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.appcompat.widget.SearchView
 import android.view.Menu
 import br.com.movilenext.taco.R
 import br.com.movilenext.taco.core.extension.contentView

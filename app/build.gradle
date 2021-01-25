@@ -34,20 +34,20 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support.constraint:constraint-layout:$constraint_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     //region Support Design
-    implementation "com.android.support:appcompat-v7:$android_support_version"
-    implementation "com.android.support:recyclerview-v7:$android_support_version"
-    implementation "com.android.support:design:$android_support_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
     //endregion
 
     //region Arch Components
-    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
-    implementation "android.arch.persistence.room:runtime:$room_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    kapt "android.arch.persistence.room:compiler:$room_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.room:room-runtime:2.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt 'androidx.room:room-compiler:2.0.0'
 
     //endregion
 
@@ -72,7 +72,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
-    implementation "android.arch.persistence.room:rxjava2:$room_version"
+    implementation 'androidx.room:room-rxjava2:2.0.0'
 
     //endregion
 
@@ -85,10 +85,10 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.robolectric:robolectric:$roboletric_version"
     androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okHttp3_version"
-    androidTestImplementation "com.android.support.test:runner:$runner_version"
-    androidTestImplementation "com.android.support.test:rules:$runner_version"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$espresso_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:rules:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.0'
     androidTestImplementation "commons-io:commons-io:$commons_io"
 
     //endregion

@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.presentation.features.food.list
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import br.com.movilenext.taco.core.platform.BaseViewModel
 import br.com.movilenext.taco.domain.interactor.GetFoodByCategoryId
 import io.reactivex.rxkotlin.addTo

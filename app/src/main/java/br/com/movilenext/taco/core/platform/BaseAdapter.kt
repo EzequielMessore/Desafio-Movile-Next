@@ -1,6 +1,6 @@
 package br.com.movilenext.taco.core.platform
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 
 abstract class BaseAdapter<T, A : RecyclerView.ViewHolder> : RecyclerView.Adapter<A>() {
