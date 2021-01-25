@@ -61,7 +61,7 @@ open class BaseTestRobot {
     }
 
     protected fun setTextInSearchView(text: String) {
-        onView(withId(Resources.getSystem().getIdentifier("search_src_text", "id", "android")))
+        onView(withId(androidx.appcompat.R.id.search_src_text))
             .perform(ViewActions.typeText(text), pressKey(KEYCODE_ENTER))
             .perform(closeSoftKeyboard())
     }
